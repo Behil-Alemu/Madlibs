@@ -5,19 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madlibs</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css"  >
+
 </head>
 <body>
-    <h1>Madlibs</h1>
-    <form action="/story">
-        {% for prompt in prompts%}
-        <ul>
-        <li>{{prompt}}:
-            <input type="text" name="{{prompt}}">
-        </li>
-        </ul>
-        {%endfor%}
-        <button>GO</button>
-    </form>
-    
+    <div class="container">
+        <h1 class="text">Madlibs</h1>
+            <form action="/story">
+                {% for prompt in prompts%}
+                <div class="form-row">
+                    <ul>
+                        <div class="input-data">
+                            <li>
+                                <input type="text" name="{{prompt}}">
+                                <label for="{{prompt}}">{{prompt}}</label>
+                            </li>
+                            <div class="underline"></div>
+                        </div>
+                    </ul>
+                </div>
+                {%endfor%}
+                <div class=" submit-btn">
+                    <div class="input-data">
+                       <div class="inner"></div>
+                       <input type="submit" value="submit">
+                    </div>
+                 </div>
+                
+            
+            </form>
+    </div>
 </body>
 </html>
